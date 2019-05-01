@@ -106,7 +106,6 @@ BOOL _editEnabled;
     [self layoutInvisibleTextField];
 
     [self layoutScrollView];
-    [self addSubview:self.scrollView];
     [self reloadData];
 
     self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -186,6 +185,7 @@ BOOL _editEnabled;
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    self.scrollView.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
     self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.frame) - self.horizontalInset * 2, CGRectGetHeight(self.frame) - self.verticalInset * 2);
     if ([self isCollapsed])
     {
@@ -261,6 +261,7 @@ BOOL _editEnabled;
             self.verticalInset,
             self.horizontalInset);
     self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    [self addSubview:self.scrollView];
 }
 
 - (void)layoutInputTextFieldWithCurrentX:(CGFloat *)currentX currentY:(CGFloat *)currentY clearInput:(BOOL)clearInput
