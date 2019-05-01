@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'VENTokenField'
-  s.version      = '2.5.3'
+  s.version      = '2.5.4'
   s.summary      = 'Token field used in the Messaging Composers for Hudl app.'
   s.description   = <<-DESC
                    An easy to use token field that in used in the Venmo app modified for Hudl Use.
